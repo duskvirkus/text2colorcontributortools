@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Training Data Preparer | Text2Color Contributor Tools</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="https://figraham.github.io/text2color/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://figraham.github.io/text2color/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://figraham.github.io/text2color/images/favicon-16x16.png">
+	<link rel="manifest" href="https://figraham.github.io/text2color/images/site.webmanifest">
+	<link rel="mask-icon" href="https://figraham.github.io/text2color/images/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Libraries -->
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.14.1/dist/tf.min.js"> </script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+	<!-- CSS -->
+	<link href="https://figraham.github.io/text2color/styles.css" rel="stylesheet">
+
+	<style>
+		body {
+      margin:0;
+			padding:0;
+		}
+		canvas {
+			margin:auto;
+		}
+	</style>
+
+	<!-- Shared Code -->
+	<script src="../sharedcode/multihothex.js"></script>
+	<script src="../sharedcode/hashtext.js"></script>
+
+	<!-- Preparer -->
+  <script src="./settings.js"></script>
+  <script src="./preparer.js"></script>
+
+</head>
+<body>
+
+	<nav class="navbar navbar-light navbar-expand-sm">
+		<img src="https://figraham.github.io/text2color/images/logo-h-80px.png" width="171" height="30" alt="Text 2 Color">
+		<a href="#" class="navbar-brand ml-auto">Contributor Tools</a>
+	</nav>
+
+	<div class="container-fluid my-3">
+		<h1>Training Data Preparer</h1>
+		<div class="input-group my-3">
+			<input type="text" class="form-control" placeholder="OutputFileName" aria-describedby="outputFileType" id="filename">
+		  <div class="input-group-append">
+		    <span class="input-group-text" id="outputFileType">.csv</span>
+		  </div>
+		</div>
+		<small>Select multiple filters for larger set of training data.</small>
+		<div class="input-group">
+			<div class="input-group-text mt-2">
+				<input type="checkbox" id="nochange" checked><span class="ml-2">No Change</span>
+			</div>
+			<div class="input-group-text ml-3 mt-2">
+				<input type="checkbox" id="lower"><span class="ml-2">Lower Case</span>
+			</div>
+			<div class="input-group-text ml-3 mt-2">
+				<input type="checkbox" id="upper"><span class="ml-2">Upper Case</span>
+			</div>
+			<div class="input-group-text ml-3 mt-2">
+				<input type="checkbox" id="start"><span class="ml-2">Start Case</span>
+			</div>
+		</div>
+		<button class="btn btn-dark my-3" id="download">Download</button>
+	</div>
+
+</body>
+</html>
