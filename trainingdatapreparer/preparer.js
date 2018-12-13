@@ -54,6 +54,7 @@ function createOutputTable() {
 }
 
 function createOutputTableLabels() {
+  outputTable.addColumn('text-original');
   for (let i = 0; i < 16; i++) {
     let label = 'text';
     outputTable.addColumn(`${label}-${i}`);
@@ -78,6 +79,7 @@ function transferToOutputTable(mode) {
     if (mode === LOWER) inputText = inputText.toLowerCase();
     if (mode === UPPER) inputText = inputText.toUpperCase();
     if (mode === START) inputText = startCase(inputText);
+    row.setString('text-original', inputText);
     let text = hashText(inputText);
     for (let j = 0; j < text.length; j++) {
       row.setNum(`text-${j}`, text[j]);

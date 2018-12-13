@@ -1,4 +1,5 @@
+node_modules
 trainingdatapreparer/data
-mlanalyzergenerator/data
+tfanalyzergenerator/data
 trainingdatapreparer/settings.js
-mlanalyzergenerator/settings.js
+tfanalyzergenerator/settings.js

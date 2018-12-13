@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Training Data Preparer | Text2Color Contributor Tools</title>
+	<title>TF Analyzer Creation Tool | Text2Color</title>
 
 	<!-- Favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="https://figraham.github.io/text2color/images/apple-touch-icon.png">
@@ -44,42 +44,41 @@
 	<script src="../sharedcode/multihothex.js"></script>
 	<script src="../sharedcode/hashtext.js"></script>
 
-	<!-- Preparer -->
-  <script src="./settings.js"></script>
-  <script src="./preparer.js"></script>
+	<!-- Creator -->
+	<script src="./defaultsettings.js"></script>
+	<script src="./settings.js"></script>
+	<script src="./functions.js"></script>
+	<script src="./progressbar.js"></script>
+	<script src="./swatch.js"></script>
+	<script src="./swatchcollection.js"></script>
+	<script src="./creator.js"></script>
 
 </head>
 <body>
 
 	<nav class="navbar navbar-light navbar-expand-sm">
 		<img src="https://figraham.github.io/text2color/images/logo-h-80px.png" width="171" height="30" alt="Text 2 Color">
-		<a href="#" class="navbar-brand ml-auto">Contributor Tools</a>
+		<a href="#" class="navbar-brand ml-auto">ML Analyzer Creation Tool</a>
 	</nav>
 
-	<div class="container-fluid my-3">
-		<h1>Training Data Preparer</h1>
+	<div class="container-fluid">
+
+		<h3 class="mt-5">Controls</h3>
 		<div class="input-group my-3">
-			<input type="text" class="form-control" placeholder="OutputFileName" aria-describedby="outputFileType" id="filename">
-		  <div class="input-group-append">
-		    <span class="input-group-text" id="outputFileType">.csv</span>
-		  </div>
+			<input type="text" class="form-control" placeholder="Model Name" id="filename">
 		</div>
-		<small>Select multiple filters for larger set of training data.</small>
-		<div class="input-group">
-			<div class="input-group-text mt-2">
-				<input type="checkbox" id="nochange" checked><span class="ml-2">No Change</span>
-			</div>
-			<div class="input-group-text ml-3 mt-2">
-				<input type="checkbox" id="lower"><span class="ml-2">Lower Case</span>
-			</div>
-			<div class="input-group-text ml-3 mt-2">
-				<input type="checkbox" id="upper"><span class="ml-2">Upper Case</span>
-			</div>
-			<div class="input-group-text ml-3 mt-2">
-				<input type="checkbox" id="start"><span class="ml-2">Start Case</span>
-			</div>
-		</div>
-		<button class="btn btn-dark my-3" id="download">Download</button>
+		<button class="btn btn-dark mb-3" id="start">Start Training</button>
+		<button class="btn btn-dark mb-3" id="save">Save TF Model</button>
+
+		<h3 class="mt-5">Progress</h3>
+		<div class="m-3" id="progressBar"></div>
+		<div class="m-3" id="timeRunning">Time Running: </div>
+
+		<h3 class="mt-5" id="trainingSwatchesTitle">Training Swatches</h3>
+		<div class="d-flex flex-wrap" id="trainingSwatches"></div>
+		<h3 class="mt-5" id="testingSwatchesTitle">Testing Swatches</h3>
+		<div class="d-flex flex-wrap" id="testingSwatches"></div>
+
 	</div>
 
 </body>
