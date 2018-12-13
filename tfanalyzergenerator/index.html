@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>TF Analyzer Creation Tool | Text2Color</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="https://figraham.github.io/text2color/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://figraham.github.io/text2color/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://figraham.github.io/text2color/images/favicon-16x16.png">
+	<link rel="manifest" href="https://figraham.github.io/text2color/images/site.webmanifest">
+	<link rel="mask-icon" href="https://figraham.github.io/text2color/images/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Libraries -->
+	<script src="../node_modules/%40tensorflow/tfjs/dist/tf.min.js"></script>
+	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+	<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../node_modules/p5/lib/p5.min.js"></script>
+	<script src="../node_modules/p5/lib/addons/p5.dom.min.js"></script>
+
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+	<!-- CSS -->
+	<link href="https://figraham.github.io/text2color/styles.css" rel="stylesheet">
+
+	<style>
+		body {
+      margin:0;
+			padding:0;
+		}
+		canvas {
+			margin:auto;
+		}
+	</style>
+
+	<!-- Shared Code -->
+	<script src="../sharedcode/multihothex.js"></script>
+	<script src="../sharedcode/hashtext.js"></script>
+
+	<!-- Creator -->
+	<script src="./defaultsettings.js"></script>
+	<script src="./settings.js"></script>
+	<script src="./functions.js"></script>
+	<script src="./progressbar.js"></script>
+	<script src="./swatch.js"></script>
+	<script src="./swatchcollection.js"></script>
+	<script src="./creator.js"></script>
+
+</head>
+<body>
+
+	<nav class="navbar navbar-light navbar-expand-sm">
+		<img src="https://figraham.github.io/text2color/images/logo-h-80px.png" width="171" height="30" alt="Text 2 Color">
+		<a href="#" class="navbar-brand ml-auto">ML Analyzer Creation Tool</a>
+	</nav>
+
+	<div class="container-fluid">
+
+		<h3 class="mt-5">Controls</h3>
+		<div class="input-group my-3">
+			<input type="text" class="form-control" placeholder="Model Name" id="filename">
+		</div>
+		<button class="btn btn-dark mb-3" id="start">Start Training</button>
+		<button class="btn btn-dark mb-3" id="save">Save TF Model</button>
+
+		<h3 class="mt-5">Progress</h3>
+		<div class="m-3" id="progressBar"></div>
+		<div class="m-3" id="timeRunning">Time Running: </div>
+
+		<h3 class="mt-5" id="trainingSwatchesTitle">Training Swatches</h3>
+		<div class="d-flex flex-wrap" id="trainingSwatches"></div>
+		<h3 class="mt-5" id="testingSwatchesTitle">Testing Swatches</h3>
+		<div class="d-flex flex-wrap" id="testingSwatches"></div>
+
+	</div>
+
+</body>
+</html>

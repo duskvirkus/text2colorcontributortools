@@ -22,3 +22,26 @@ function multiHotHex(number, hexDigits) {
   }
   return output;
 }
+
+function multiHotHexToColor(input, i) {
+  let hex = '';
+  for (let i = 0; i < 6; i++) {
+    let offset = i * 16;
+    let record = 0;
+    let index = 0;
+    for (let j = 0; j < 16; j++) {
+      if (input[offset + j] > record) {
+        record = input[offset + j];
+        index = j;
+      }
+    }
+    //console.assert(index != null, i);
+    hex += index.toString(16);
+  }
+  return hexToColor(hex);
+}
+
+function hexToColor(hex) {
+  if (hex.length != 6) return null;
+  return color(parseInt(hex.substring(0,2), 16), parseInt(hex.substring(2,4), 16), parseInt(hex.substring(4,6), 16));
+}
