@@ -1,0 +1,32 @@
+{
+  "name": "text2colorcontributortools",
+  "version": "0.0.1",
+  "description": "Contributor tools for text2color.com.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/figraham/text2colorcontributortools.git"
+  },
+  "keywords": [
+    "creative-coding",
+    "p5js",
+    "tensorflow",
+    "art",
+    "design"
+  ],
+  "author": "Fi Graham",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/figraham/text2colorcontributortools/issues"
+  },
+  "homepage": "https://github.com/figraham/text2colorcontributortools#readme",
+  "devDependencies": {
+    "@tensorflow/tfjs": "^0.15.3",
+    "bootstrap": ">=4.3.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.7"
+  }
+}
